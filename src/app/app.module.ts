@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { TransactionsPageComponent } from './Pages/transactions-page/transactions-page.component';
 import { PublicPageComponent } from './Pages/public-page/public-page.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PublicPageComponent } from './Pages/public-page/public-page.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
