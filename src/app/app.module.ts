@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { TransactionsPageComponent } from './Pages/transactions-page/transactions-page.component';
+import { PublicPageComponent } from './Pages/public-page/public-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    TransactionsPageComponent
+    TransactionsPageComponent,
+    PublicPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
