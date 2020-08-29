@@ -13,7 +13,4 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  testi(): void {
-    this.apiService.getToken("user","pass").subscribe((data)=>console.log(data));
-  }
 }
