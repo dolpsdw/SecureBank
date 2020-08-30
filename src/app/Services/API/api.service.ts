@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
 import {TokenResponse} from './Models/token-response';
 import {TokenRequest} from './Models/token-request';
 import {Transaction} from './Models/transaction';
@@ -18,7 +18,20 @@ export class ApiService {
       username: user,
       password: pass
     };
-    return this.http.post<TokenResponse>(this.endpoint + 'token', body);
+    return new Observable<TokenResponse>(subscriber => {
+      this.http.post<TokenResponse>(this.endpoint + 'token', body).subscribe(
+        tokenResponse => {
+          subscriber.next(tokenResponse);
+          subscriber.complete();
+        },
+        (httpError: HttpErrorResponse) => {
+          if (httpError.status === 401){
+            subscriber.error('User or Password is Wrong');
+          }
+          subscriber.error('Unknown Error');
+        }
+      );
+    });
   }
 
   public getTransactions(sort?: string, description?: string): Observable<Transaction[]>{

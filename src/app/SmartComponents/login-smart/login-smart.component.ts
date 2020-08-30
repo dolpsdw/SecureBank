@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthenticationService} from '../../Services/authentication.service';
 
 @Component({
   selector: 'app-login-smart',
@@ -15,12 +16,12 @@ export class LoginSmartComponent implements OnInit {
     pass: this.passFormControl
   });
 
-  constructor() { }
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    console.log(this.loginForm.value);
+    this.auth.logIn(this.loginForm.value.user, this.loginForm.value.pass).subscribe(ok=>console.log("need sub"));
   }
 }
