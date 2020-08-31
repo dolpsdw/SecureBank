@@ -29,10 +29,14 @@ export class AuthenticationService {
           this._isLoggedIn$.next(true);
           // Shared Controller logic of all components that will do LogIn
           this.router.navigate(['/transactions']);
+          // Complete
+          subscriber.next(token.accessToken);
+          subscriber.complete();
         }, // On Error handle and reThrow
         (errorMessage: string) => {
           this._isLoggedIn$.next(false);
           this._userInfo$.next(null);
+          // Error re-throw
           subscriber.error(errorMessage);
         }
       );

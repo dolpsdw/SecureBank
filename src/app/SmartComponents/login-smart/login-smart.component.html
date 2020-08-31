@@ -22,4 +22,5 @@
   </mat-form-field>
   <button type="submit" mat-flat-button color="primary" [disabled]="!loginForm.valid"
   class="login-form__submit-login">LogIn</button>
+  <span *ngIf="displayServerError$ | async as errorMessage" class="login-form__server-error">{{errorMessage}}</span>
 </form>

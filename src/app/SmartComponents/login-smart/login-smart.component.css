@@ -11,3 +11,7 @@
 
 .login-form__submit-login {
 }
+
+.login-form__server-error {
+  color: red;
+}
