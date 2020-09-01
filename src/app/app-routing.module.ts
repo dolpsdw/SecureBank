@@ -8,8 +8,8 @@ import {AuthGuard} from './GuardsInterceptors/auth.guard';
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path: 'transactions', component: TransactionsPageComponent, canActivate: [AuthGuard]},
-  {path: '', component: PublicPageComponent},
-  {path: '**', component: PublicPageComponent} // Handle 404 with a silent
+  {path: '', component: PublicPageComponent, pathMatch: 'full'},
+  {path: '**', component: PublicPageComponent, pathMatch: 'full'} // Handle 404 with a silent
 ];
 
 @NgModule({

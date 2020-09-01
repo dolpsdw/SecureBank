@@ -15,8 +15,12 @@ export class AuthenticationService {
   public isLoggedIn$ = this._isLoggedIn$.pipe(distinctUntilChanged());
   public userInfo$ = this._userInfo$.pipe(distinctUntilChanged());
   // Public Synchronous
-  public isLoggedIn = this._isLoggedIn$.getValue();
-  public userInfo = this._userInfo$.getValue();
+  public isLoggedIn(): boolean {
+    return this._isLoggedIn$.getValue();
+  }
+  public userInfo(): UserInfo{
+    return this._userInfo$.getValue();
+  }
 
   constructor(private api: ApiService, private router: Router) { }
 
