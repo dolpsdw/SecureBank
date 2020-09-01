@@ -15,3 +15,7 @@
 .transaction-view__number--positive{
   color: green;
 }
+
+.transaction-view {
+  margin: 0.7em;
+}

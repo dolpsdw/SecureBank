@@ -7,17 +7,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 The goal in mind with the architecture has been the following:
  * to use Rxjs for every IO,ET centralizing Emission rights.
  * to centralize all Outside API calls in a service to Stub,Spy on it
- * to keep the Test smallest and faster as possible
+ * to keep the Test smallest and faster (unitary) as possible without need e2e
  
 ## Progress
 
-The Login part of the practice is done.
+The Login part of the practice it's done.
 
-Next steps could be implement interceptor for /transactions Api
-
-To Do: the /transactions
-
-To Improve: Refine the ng test output to eliminate some warning/errors
+To Improve: 
+* Refine the ng test output to eliminate some warning
+* Make modules for components, so they can be lazy Loaded
 
 ## Development server
 

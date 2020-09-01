@@ -1,0 +1,15 @@
+.transaction-list__no-result {
+  border: 0.1em solid #ccc;
+}
+
+.transaction-list__search-box {
+  margin: 0.1em 1em 0.1em 0.3em;
+}
+
+.transaction-list__short-by-date-icon {
+  margin: 0.1em;
+}
+
+.transaction-list__short-by-date-icon-swap {
+  margin-left: -7px; margin-top: -5px;
+}

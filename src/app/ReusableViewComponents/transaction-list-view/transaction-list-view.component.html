@@ -1,0 +1,22 @@
+<mat-grid-list cols="1" rowHeight="1.5:1" gutterSize="9px">
+  <mat-grid-tile-header>
+    <mat-form-field class="transaction-list__search-box">
+      <mat-label>Search</mat-label>
+      <input matInput #searchBox type="text">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="handleClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-hint align="end">(Short by Date &quot;{{filterState.dateSort}}&quot;)</mat-hint>
+    </mat-form-field>
+    <button mat-icon-button #sortByDateSwap class="transaction-list__short-by-date-icon">
+      <span class="material-icons">event</span>
+      <span class="material-icons transaction-list__short-by-date-icon-swap" >swap_vert</span>
+    </button>
+  </mat-grid-tile-header>
+  <mat-grid-tile *ngFor="let t of transactions">
+    <app-transaction-view [transaction]="t"></app-transaction-view>
+  </mat-grid-tile>
+  <mat-grid-tile *ngIf="transactions.length === 0" class="transaction-list__no-result">
+    <div>Nothing to display</div>
+  </mat-grid-tile>
+</mat-grid-list>
