@@ -1,0 +1,17 @@
+.transaction-view__content {
+  display: flex;
+  text-align: center;
+}
+
+.transaction-view__col {
+  flex: 50%;
+  flex-direction: column;
+}
+
+.transaction-view__number--negative{
+  color: red;
+}
+
+.transaction-view__number--positive{
+  color: green;
+}

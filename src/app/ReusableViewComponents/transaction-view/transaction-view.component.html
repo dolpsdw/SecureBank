@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{transaction.description ? transaction.description:'Unknown' }}</mat-card-title>
+    <mat-card-subtitle>{{transaction.date ? transaction.date.toUTCString():'Unknown' }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- If use display flex inside mat-car-content it may break things -->
+    <div class="transaction-view__content">
+      <div class="transaction-view__col">
+        <div>ID: {{transaction.id}}</div>
+        <div>From: {{transaction.userId}}</div>
+      </div>
+      <div class="transaction-view__col">
+        <div>Amount:
+          <span [ngClass]="transaction.amount > 0 ? 'transaction-view__number--positive' : 'transaction-view__number--negative'">
+            {{transaction.amount ? transaction.amount : 'Unknown'}}
+          </span></div>
+        <div>Fee:
+          <span [ngClass]="transaction.fee ? 'transaction-view__number--negative' : 'transaction-view__number--positive'">
+            {{transaction.fee ? transaction.fee : 'Free'}}
+          </span></div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

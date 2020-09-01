@@ -15,6 +15,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AuthBearerInterceptor} from './GuardsInterceptors/auth-bearer.interceptor';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { TransactionViewComponent } from './ReusableViewComponents/transaction-view/transaction-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {AuthBearerInterceptor} from './GuardsInterceptors/auth-bearer.intercepto
     LoginPageComponent,
     TransactionsPageComponent,
     PublicPageComponent,
-    LoginSmartComponent
+    LoginSmartComponent,
+    TransactionViewComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import {AuthBearerInterceptor} from './GuardsInterceptors/auth-bearer.intercepto
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthBearerInterceptor, multi: true }],
   bootstrap: [AppComponent]
