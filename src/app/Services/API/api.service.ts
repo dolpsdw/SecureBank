@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {Observable} from 'rxjs';
 import {TokenResponse} from './Models/token-response';
 import {TokenRequest} from './Models/token-request';
 import {Transaction} from './Models/transaction';
@@ -35,12 +35,12 @@ export class ApiService {
   }
 
   public getTransactions(sort?: string, description?: string): Observable<Transaction[]>{
-    const params = new HttpParams();
+    let params = new HttpParams();
     if (sort === 'asc' || sort === 'desc'){
-      params.append('sort', sort);
+      params = params.append('sort', sort);
     }
     if (description){
-      params.append('description', description);
+      params = params.append('description', description);
     }
     return this.http.get<Transaction[]>(this.endpoint + 'transactions', {params});
   }

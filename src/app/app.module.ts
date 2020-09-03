@@ -19,6 +19,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { TransactionViewComponent } from './ReusableViewComponents/transaction-view/transaction-view.component';
 import { TransactionListViewComponent } from './ReusableViewComponents/transaction-list-view/transaction-list-view.component';
+import { TransactionsSmartComponent } from './SmartComponents/transactions-smart/transactions-smart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TransactionListViewComponent } from './ReusableViewComponents/transacti
     PublicPageComponent,
     LoginSmartComponent,
     TransactionViewComponent,
-    TransactionListViewComponent
+    TransactionListViewComponent,
+    TransactionsSmartComponent
   ],
   imports: [
     BrowserModule,
